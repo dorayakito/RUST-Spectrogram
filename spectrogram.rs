@@ -16,7 +16,7 @@ pub fn compute_spectrogram_data(samples: &[f32], sample_rate: u32, settings: &Sp
     let mut output = fft.make_output_vec();
 
     let num_frames = (samples.len() - fft_size) / hop_size + 1;
-    let num_bins = fft_size / 2 + 1; // real FFT returns N/2+1 bins (inclui DC e Nyquist)
+    let num_bins = fft_size / 2 + 1;
 
     let mut frames_mag = Vec::with_capacity(num_frames);
     let mut global_peak: f32 = 0.0;
